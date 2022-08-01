@@ -183,5 +183,140 @@
 
 # if (A-B)*(day-1) + A >= C:
 #     day = day -
-
 # print(day)
+
+# 11721
+
+# n = input()
+
+# while True:
+#     if len(n)>10:
+#         print(n[:10])
+#         n = n[10:]
+#     else:
+#         print(n)
+#         break
+
+#  10953
+
+# T = int(input())
+
+# for i in range(T):
+#     a,b=map(int,input().split(","))
+#     print(a+b)
+
+# 10808
+
+# alphabet = [0] * 26
+
+# n = input()
+
+# for a in n:
+#     for j in range(97,123):
+#         if a == chr(j):
+#             alphabet[j-97] +=1
+
+# result = ' '.join(str(s) for s in alphabet)
+# print(result)
+
+# 1259
+
+# while True:
+#     n =input()
+#     if n=='0':
+#         break
+#     elif n == n[::-1]:
+#         print('yes')
+#     else:
+#         print('no')
+    
+# 1100
+
+# total = []
+# li =[]
+# count =0
+# for i in range(8):
+#     a=str(input())
+#     for j in range(8):
+#         li.append(a[j])
+#     total.append(li)
+#     li = []
+
+# for i in range(8):
+#     for j in range(8):
+#         if i % 2 ==0 and j % 2 ==0:
+#             if total[i][j] =='F':
+#                 count +=1
+                
+#         if i % 2 == 1 and j % 2 ==1:
+#             if total[i][j] =='F':
+#                 count +=1
+                
+
+# print(count)
+
+# 1032 
+
+# N = int(input())
+# l = []
+# for i in range(N):
+#     f = input()
+#     l.append(f)
+
+# first = list(max(l))
+
+# for i in range(len(l)):
+#     for j in range(len(l[i])):
+#         if first[j] == l[i][j]:
+#             pass
+#         elif first[j] != l[i][j]:
+#             first[j] = '?'
+
+# print(''.join(first))
+
+# 2902
+
+# n = input()
+# l = []
+# for i in range(len(n)):
+#     if n[i].isupper():
+#         l.append(n[i])
+
+# print(''.join(l))
+
+# 10988
+
+# n= list(input())
+
+# if n == n[::-1]:
+#     print("1")
+# else:
+#     print("0")
+
+# 1212
+
+n = int(input())
+sum = ''
+while True:
+    if n ==0:
+        break
+    a = int(n) % 10
+    if a % 2 == 0:
+        sum = "0" +sum
+    elif a % 2 == 1:
+        sum = "1" + sum
+
+    if a // 4 == 0 and a // 2 == 1:
+        sum = "1" +sum
+    else:
+        sum = "0" +sum
+    
+    if a //4 ==1:
+        sum = "1" +sum
+    else:
+        sum = "0" +sum
+
+     
+    
+    n = n//10
+print(int(sum))
