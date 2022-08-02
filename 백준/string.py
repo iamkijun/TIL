@@ -293,30 +293,60 @@
 # else:
 #     print("0")
 
-# 1212
+# 1212 왜 안되는지 모르겠음
 
-n = int(input())
-sum = ''
-while True:
-    if n ==0:
-        break
-    a = int(n) % 10
-    if a % 2 == 0:
-        sum = "0" +sum
-    elif a % 2 == 1:
-        sum = "1" + sum
+# n = int(input())
+# sum = ''
+# while True:
+#     if n ==0:
+#         break
+#     a = int(n) % 10
+#     if a % 2 == 0:
+#         sum = "0" +sum
+#     elif a % 2 == 1:
+#         sum = "1" + sum
 
-    if a // 4 == 0 and a // 2 == 1:
-        sum = "1" +sum
-    else:
-        sum = "0" +sum
+#     if a // 4 == 0 and a // 2 == 1:
+#         sum = "1" +sum
+#     else:
+#         sum = "0" +sum
     
-    if a //4 ==1:
-        sum = "1" +sum
-    else:
-        sum = "0" +sum
+#     if a //4 ==1:
+#         sum = "1" +sum
+#     else:
+#         sum = "0" +sum
 
      
     
-    n = n//10
-print(int(sum))
+#     n = n//10
+# print(int(sum))
+
+# 9093
+
+# T = int(input())
+
+# for i in range(T):
+#     s = list(map(str, input().split()))
+#     for i in range(len(s)):
+#         s[i] = s[i][::-1]
+#     print(" ".join(s))
+
+# 11655
+
+s = input()
+for i in range(len(s)):
+    
+    if s[i].islower():
+        if ord(s[i]) > 109:
+            print(chr(ord(s[i])-13), end="")
+        else:
+            print(chr(ord(s[i])+13), end="")
+    elif s[i].isupper():
+        if ord(s[i]) > 77:
+            print(chr(ord(s[i])-13), end="")
+        else:
+            print(chr(ord(s[i])+13), end="")
+    else:
+        print(s[i], end="")
+
+
