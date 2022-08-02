@@ -105,3 +105,84 @@ p103 시험문제 무조건 나옴. 풀어보고 왜 그렇게 되는지 이해 
 
 ### CSS 상속
 CSS 상속은 자동으로 일어나는데, 상속 되는 게 있고 안되는 게 있다.
+
+### 크기단위
+em 바로 위
+rem 제일 위
+
+###  색상 단위
+- 색상 키워드
+- RGB 색상(rgb(0,255,0)) +a는 투명도
+
+외우는게 아니라 많이 써서 익숙해질 수 있도록
+컬러, 배경 정도만 
+
+### BOX MODEL
+
+(Content - Padding) - Border - Margin
+백그라운드 컬러 적용
+
+**시험에 나옴**
+margin shorthand
+margin: 한개만 쓰면 상하좌우
+margin: 두개 쓰면 상하/좌우
+margin: 세개 쓰면 나누기 1/2/1
+margin: 네게 쓰면 상부터 시계방향
+
+box-sizing
+padding을 제외한 순수 contents 영역만을 box로 지정
+다만, 우리가 영역을 볼 때는 border까지의 너비를 100px 보는 것을 원함
+이 경우, box-sizing을 border-box로 설정
+
+### CSS Display
+블럭요소/인라인요소
+display: block
+display: inline
+
+- 대표적인 블록 레벨 요소
+  -   div p hr form
+- 대표적인 인라인 레벨 요소
+  - span a img input label
+
+block의 기본 너비는 갖리 수 있는 너비의 100%
+블럭요소는 width를 주면 나머지는 margin으로 먹는다.
+
+
+### 정렬
+margin-right:auto; text-align:left;
+margin-left:auto; text-align:right;
+margin-right:auto;margin-left:auto; text-align:center;
+
+### display
+**display: inline-block**
+- block과 inline 레벨 요소
+**display: none**
+- 해당 요소를 화면에 표시하지 않고, 공간조차 부여되지 않음
+- 이와 비슷한 visibility:hidder은 해당 요사가 공간은 차지하나 화면에 표시만 하지 않는다.
+
+155p 코드 직접 쳐보기
+
+
+### CSS position
+
+'mdn position' search on google
+
+position: static; -> normal flow를 따른다.(기본, 쓰나 마나 똑같다.)
+position: relative; -> 원래 자리를 차지하고 있고, 우리 눈에 다른 위치로 보이는 것.
+position: absolute; -> 원래 자리를 차지하지 않고, 부모 요소의 왼쪽 상단을 기준으로 이동.
+position: sticky; -> 항상 내가 있는 위치를 기준으로 띄우겠다.
+
+165p 형 동생 하는거 직접 쳐보기
+
+### Emmet
+
+[치트시트 바로가기](https://docs.emmet.io/cheat-sheet/)
+
+
+! tab
+p*5 tab
+div*3 tab
+단축기 잘쓰자.
+
+flukeout.github.io
+
