@@ -333,20 +333,37 @@
 
 # 11655
 
-s = input()
-for i in range(len(s)):
+# s = input()
+# for i in range(len(s)):
     
-    if s[i].islower():
-        if ord(s[i]) > 109:
-            print(chr(ord(s[i])-13), end="")
-        else:
-            print(chr(ord(s[i])+13), end="")
-    elif s[i].isupper():
-        if ord(s[i]) > 77:
-            print(chr(ord(s[i])-13), end="")
-        else:
-            print(chr(ord(s[i])+13), end="")
-    else:
-        print(s[i], end="")
+#     if s[i].islower():
+#         if ord(s[i]) > 109:
+#             print(chr(ord(s[i])-13), end="")
+#         else:
+#             print(chr(ord(s[i])+13), end="")
+#     elif s[i].isupper():
+#         if ord(s[i]) > 77:
+#             print(chr(ord(s[i])-13), end="")
+#         else:
+#             print(chr(ord(s[i])+13), end="")
+#     else:
+#         print(s[i], end="")
 
+# 10798
+# l=[]
+# max_len = 0
+# for i in range(5):
+#     a = input()
+#     l.append(a)
+#     if len(a) > max_len:
+#         max_len = len(a)
+
+# for i in range(max_len):
+#     for j in range(5):
+#         try:
+#             print(l[j][i], end="")
+#         except:
+#             pass
+
+# https://flukeout.github.io/
 
