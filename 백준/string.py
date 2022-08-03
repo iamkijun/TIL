@@ -98,25 +98,33 @@
 
 # print(sum)
 
-# 2941 (왜 안되는지 모르겠음,런타임에러)
+# # 2941 (왜 안되는지 모르겠음,런타임에러)
 
 # N = input()
 
 # cro_alpha = ['c=','c-','d-','lj','nj','s=','z=']
 # a= []
-# for i in range(0,len(N)-2):
-#     if N[i]+N[i+1]+N[i+2] == "dz=":
-#         continue
-#     elif N[i]+N[i+1] in cro_alpha:
-#         continue
+# if len(N) >2:
+#     for i in range(0,len(N)-2):
+#         if N[i]+N[i+1]+N[i+2] == "dz=":
+#             continue
+#         elif N[i]+N[i+1] in cro_alpha:
+#             continue
+#         else:
+#             a.append('k')
+#     if N[-2]+N[-1] in cro_alpha:
+#         a.append('k')
 #     else:
 #         a.append('k')
-
-# if N[-2]+N[-1] in cro_alpha:
-#     a.append('k')
-# else:
-#     a.append('k')
-#     a.append('k')
+#         a.append('k')
+# elif len(N) ==2:
+#     if N[-2]+N[-1] in cro_alpha:
+#         a.append('k')
+#     else:
+#         a.append('k')
+#         a.append('k')
+# elif len(N) ==1:
+#     a.append('k')    
 
 # print(len(a))
 
@@ -365,5 +373,206 @@
 #         except:
 #             pass
 
-# https://flukeout.github.io/
+# # 10820 멈추는 법을 모르겠음
+# N= 4
+# for i in range(N):
+#     n = input()
+#     a,b,c,d = 0,0,0,0
+#     for i in range(len(n)):
+#         if n[i].islower():
+#             a+=1
+#         elif n[i].isupper():
+#             b+=1
+#         elif n[i].isdigit():
+#             c+=1
+#         elif n[i] ==" ":
+#             d+=1
+#     print(a,b,c,d)
+
+# # 1373  시간초과
+# n = int(input())
+# new = ""
+# num = 0
+
+# while True:
+#     if n == 0:
+#         break
+#     else:
+#         if n % 1000 >= 100:
+#             num +=4
+#         if n % 100 >= 10:
+#             num +=2
+#         if n % 10 ==1:
+#             num +=1
+    
+
+#     new = str(num) + new
+
+#     n = n//1000
+
+#     num = 0
+
+# print(new)        
+
+# 7567
+
+# S = input()
+# n = 10
+# for i in range(1,len(S)):
+#     if S[i-1]==S[i]:
+#         n +=5
+#     elif S[i-1]!=S[i]:
+#         n +=10
+# print(n)
+
+# 15829 부분성공
+
+# L = int(input())
+# s = input()
+# total = 0
+
+# for i in range(L):
+#     total += (ord(s[i])%96) * (31 ** i)
+# print(total)
+
+# 2744
+
+# s = input()
+# new = ""
+# for i in range(len(s)):
+#     if s[i].isupper():
+#         new += s[i].lower()
+#     elif s[i].islower():
+#         new += s[i].upper()
+
+# print(new)
+
+#2754
+
+# grade = input()
+# total = 0
+
+# if grade[0] == 'A':
+#     total += 4
+# elif grade[0] == 'B':
+#     total += 3
+# elif grade[0] == 'C':
+#     total += 2
+# elif grade[0] == 'D':
+#     total += 1
+# elif grade[0] == 'F':
+#     total = 0
+
+# if grade[1] == '+':
+#     total += 0.3
+# elif grade[1] == '-':
+#     total -= 0.3
+# else:
+#     pass
+
+# print(f'{total:.1f}')
+
+# 1357
+
+# from tkinter import N
+
+# x, y = map(int, input().split())
+# def rev(num):
+#     new = ""
+#     while True:
+#         if num == 0:
+#             break
+#         else:
+#             new = new + str(num % 10)
+
+#         num = num // 10
+    
+#     return int(new)
+
+# print(rev(rev(x) + rev(y)))
+
+# 14425
+
+# N, M = map(int, input().split())
+# N_list=[]
+# M_list=[]
+# count = 0
+# for i in range(N):
+#     n = input()
+#     N_list.append(n)
+
+# N_list = set(N_list)
+
+# for j in range(M):
+#     m = input()
+#     if m in N_list:
+#         count+=1
+
+# print(count)
+
+#  2745
+
+# N, B = map(str, input().split())
+
+# B = int(B)
+
+# count = 0
+
+# for i in range(len(N)):
+#     if N[len(N)-i-1].isdigit():
+#         count += int(N[len(N)-i-1])*(B**i)
+#     elif N[len(N)-i-1].isupper():
+#         count += (ord(N[len(N)-i-1])-55)* (B**i)
+        
+
+# print(count)
+
+# 1302
+
+# N = int(input())
+# book_list = []
+# for i in range(N):
+#     book = input()
+#     book_list.append(book)
+
+# book_set = set(book_list)
+# book_set_list = list(book_set)
+# book_set_list.sort()
+
+# book_set_count = []
+# for i in range(len(book_set_list)):
+#     book_set_count.append(book_list.count(book_set_list[i]))
+
+# print(book_set_list[book_set_count.index(max(book_set_count))])
+
+# # 1120
+
+# A, B = map(str, input().split())
+# count = 0
+# counts =[]
+# if len(A) == len(B):
+#     for i in range(len(A)):
+#         if A[i] != B[i]:
+#             count +=1
+#     print(count)
+
+# elif len(A) > len(B):
+#     for i in range(len(A)-len(B)+1):
+#         for j in range(len(B)):
+#             if A[i+j] != B[j]:
+#                 count += 1
+#         counts.append(count)
+#         count = 0
+
+#     print(min(counts))
+
+# elif len(B) > len(A):
+#     for i in range(len(B)-len(A)+1):
+#         for j in range(len(A)):
+#             if A[j] != B[i+j]:
+#                 count += 1
+#         counts.append(count)
+#         count = 0
+
+#     print(min(counts))
 

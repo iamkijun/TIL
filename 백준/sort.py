@@ -68,17 +68,17 @@
 #     print(l[j])
 
 #  10814 - 시간초과
-import sys
-N = int(sys.stdin.readline())
-l = []
-for i in range(N):
-    a = list(map(str, sys.stdin.readline().split()))
-    l.append(a)
+# import sys
+# N = int(sys.stdin.readline())
+# l = []
+# for i in range(N):
+#     a = list(map(str, sys.stdin.readline().split()))
+#     l.append(a)
 
-l = sorted(l, key = lambda x: (x[0], l.index(x[:])))
+# l = sorted(l, key = lambda x: (x[0], l.index(x[:])))
 
-for i in range(N):
-    print(l[i][0], l[i][1])
+# for i in range(N):
+#     print(l[i][0], l[i][1])
 # for x in l:
 #     print(x[0], x[1])
 
@@ -100,4 +100,16 @@ for i in range(N):
 #             count+=1
     
 #     print(count, end=" ")
+
+# 2751
+
+n = int(input())
+l = []
+for i in range(n):
+    l.append(int(input()))
+
+l.sort()
+
+for i in range(n):
+    print(l[i])
 
