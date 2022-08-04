@@ -1,9 +1,10 @@
-# # 2798
+# 2798
 
 # N, M = map(int, input().split())
 
 # n_list = list(map(int, input().split()))
 # n_list.sort()
+# print(n_list)
 # sum_list = []
 
 # min=M
