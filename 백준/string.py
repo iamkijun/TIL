@@ -747,3 +747,66 @@
 # elif count_smile == count_sad:
 #     print('unsure')
 
+# 2789
+
+# S = input()
+# list_S = list(S)
+# cambridge= ['C','A','M','B','R','I','D','G','E']
+# result =[]
+# count = 0
+
+# for i in range(len(S)):
+#     if list_S[i] not in cambridge:
+#         result.append(list_S[i])
+    
+# print(''.join(result))
+
+# 2711
+
+# T = int(input())
+
+# for i in range(T):
+#     a, b = map(str, input().split())
+#     a = int(a)
+#     b = list(b)
+#     b[a-1] =''
+#     print(''.join(b))
+
+# 10102
+
+# V =int(input())
+# a =list(input())
+# A = 0
+# B = 0
+# for i in range(V):
+#     if a[i] =='A':
+#         A +=1
+#     elif a[i] =='B':
+#         B +=1
+
+# if A > B:
+#     print('A')
+# elif B > A:
+#     print('B')
+# else:
+#     print('Tie')
+
+# 1919
+
+# A = list(input())
+# B = list(input())
+# A_count = [0] * 26
+# B_count = [0] * 26
+# count = 0
+
+# for i in range(len(A)):
+#     A_count[ord(A[i])-97] +=1
+
+# for j in range(len(B)):
+#     B_count[ord(B[j])-97] +=1
+
+# for i in range(26):
+#     if A_count[i] != B_count[i]:
+#         count += max([A_count[i],B_count[i]]) - min([A_count[i],B_count[i]])
+    
+# print(count)
