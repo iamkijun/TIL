@@ -810,3 +810,54 @@
 #         count += max([A_count[i],B_count[i]]) - min([A_count[i],B_count[i]])
     
 # print(count)
+
+# 1225
+
+# a, b = map(str,input().split())
+# a_list = list(a)
+# b_list = list(b)
+# total = 0
+
+# for i in range(len(a_list)):
+#     a_list[i] = int(a_list[i])
+
+# for j in range(len(b_list)):
+#     total += sum(a_list) * int(b_list[j])
+
+# print(total)
+
+# 10821
+
+# a= list(map(int,input().split(',')))
+# print(len(a))
+
+# 2810
+
+# N = int(input())
+
+# L = list(input())
+# if L.count('L') >= 2:
+#     count = N - L.count('L') // 2 +1
+# else:
+#     count = N
+
+# print(count)
+
+# 5218
+
+T = int(input())
+
+for i in range(1, T+1):
+
+    a,b = map(str,input().split())
+    a = list(a)
+    b = list(b)
+    result= []
+
+    for j in range(len(a)):
+        if ord(b[j]) >= ord(a[j]):
+            result.append(str(ord(b[j])-ord(a[j])))
+        elif ord(a[j]) > ord(b[j]):
+            result.append(str(ord(b[j])-ord(a[j])+26))
+
+    print(f'Distances: {" ".join(result)}')
