@@ -845,19 +845,108 @@
 
 # 5218
 
-T = int(input())
+# T = int(input())
 
-for i in range(1, T+1):
+# for i in range(1, T+1):
 
-    a,b = map(str,input().split())
-    a = list(a)
-    b = list(b)
-    result= []
+#     a,b = map(str,input().split())
+#     a = list(a)
+#     b = list(b)
+#     result= []
 
-    for j in range(len(a)):
-        if ord(b[j]) >= ord(a[j]):
-            result.append(str(ord(b[j])-ord(a[j])))
-        elif ord(a[j]) > ord(b[j]):
-            result.append(str(ord(b[j])-ord(a[j])+26))
+#     for j in range(len(a)):
+#         if ord(b[j]) >= ord(a[j]):
+#             result.append(str(ord(b[j])-ord(a[j])))
+#         elif ord(a[j]) > ord(b[j]):
+#             result.append(str(ord(b[j])-ord(a[j])+26))
 
-    print(f'Distances: {" ".join(result)}')
+#     print(f'Distances: {" ".join(result)}')
+
+# 11098
+
+# n = int(input())
+
+# for i in range(n):
+#     p = int(input())
+#     dic = {}
+#     for j in range(p):
+#         a, b = map(str, input().split())
+#         dic[int(a)] = b
+#     print(dic.get(max(dic)))
+    
+# 1244
+
+# n = int(input())
+# a = list(map(int,input().split()))
+# stu_num = int(input())
+
+# for k in range(stu_num):
+#     mf, re_num = map(int,input().split())
+
+#     if mf == 1:
+#         for i in range(n):
+#             if (i+1) % re_num == 0:
+#                 if a[i] == 0:
+#                     a[i] = 1
+#                 elif a[i] == 1:
+#                     a[i] = 0
+#     else:
+#         if a[re_num-1] == 0:
+#             a[re_num-1] = 1
+#         elif a[re_num-1] == 1:
+#             a[re_num-1] = 0
+#         j=1
+
+#         while True:
+#             if re_num-j >= 1 and re_num+j <= n:
+#                 if a[re_num+j-1] == 0 and a[re_num-j-1] == 0:
+#                     a[re_num+j-1], a[re_num-j-1] = 1, 1
+#                     j +=1
+#                     continue
+#                 elif a[re_num+j-1] == 1 and a[re_num-j-1] == 1:
+#                     a[re_num+j-1], a[re_num-j-1] = 0, 0
+#                     j +=1
+#                     continue
+#                 else:
+#                     break
+#             else:
+#                 break
+
+# for var in a[:-1]:
+#     print(var, end=" ")
+# print(a[-1])
+
+# 2309
+# import random
+
+# h_list = []
+# for i in range(9):
+#     height = int(input())
+#     h_list.append(height)
+# while True:
+#     ran_li = random.sample(h_list,7)
+#     if sum(ran_li) == 100:
+#         ran_li.sort()
+#         for v in ran_li:
+#             print(v)
+#             break
+
+# 2477
+
+# n = int(input())
+# dic = {}
+# lose =[]
+# for i in range(6):
+#     a,b = map(int,input().split())
+#     if str(a) in dic:
+#         if b> dic[str(a)]:
+#             lose.append([a,dic[str(a)]])
+#             dic[str(a)] = b
+
+#         else:
+#             lose.append([a,b])
+#     dic[str(a)] = b
+
+# print((max(dic['4'],dic['3'])*max(dic['2'],dic['1'])-lose[0][1]*lose[1][1])*n)
+
+
