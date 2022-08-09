@@ -949,4 +949,3 @@
 
 # print((max(dic['4'],dic['3'])*max(dic['2'],dic['1'])-lose[0][1]*lose[1][1])*n)
 
-
