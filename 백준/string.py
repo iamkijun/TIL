@@ -576,3 +576,387 @@
 
 #     print(min(counts))
 
+# 2935
+
+# A = int(input())
+# B = input()
+# C = int(input())
+
+# if B =="+":
+#     print(A+C)
+# elif B == "*":
+#     print(A*C)
+
+# 1159
+
+# N = int(input())
+# li=[]
+# for i in range(N):
+#     name = input()
+#     li.append(name)
+
+# first_name=[]
+# alpha_list=[0]*26
+# for j in range(N):
+#     alpha_list[(ord(li[j][0])-97)] +=1
+
+#     if alpha_list[(ord(li[j][0])-97)] == 5:
+#         first_name.append(li[j][0])
+
+
+# if first_name ==[]:
+#     print("PREDAJA")
+# else:
+#     first_name.sort()
+#     print(''.join(first_name))
+
+#  11365
+# s=''
+# while True:
+#     s = input()
+#     if s =='END':
+#         break
+#     print(s[::-1])
+
+# 10987
+# s = input()
+# li = ['a','e','i','o','u']
+# count = 0
+# for i in range(len(s)):
+#     if s[i] in li:
+#         count+=1
+
+# print(count)
+
+# 5598
+# S = input()
+
+# for i in range(len(S)):
+#     if i==len(S)-1:
+#         if ord(S[i]) >= 68:
+#             print(chr(ord(S[i])-3))
+#         elif ord(S[i]) <= 67:
+#             print(chr(ord(S[i])+23))
+#     else:
+#         if ord(S[i]) >= 68:
+#             print(chr(ord(S[i])-3),end="")
+#         elif ord(S[i]) <= 67:
+#             print(chr(ord(S[i])+23),end="")
+
+# 1652
+# hor = 0
+# ver = 0
+# li = []
+# N = int(input())
+
+# for i in range(N):
+#     a = input()
+#     a = list(a)
+#     li.append(a)
+
+# for i in range(N):
+#     for j in range(N-1):
+#         if li[j][i] =='.' and li[j+1][i] == '.':
+#             hor += 1
+#             try:
+#                 if li[j+1][i] =='.' and li[j+2][i] == '.':
+#                     hor -=1
+#             except:
+#                 pass
+            
+#         if li[i][j] =='.' and li[i][j+1] == '.':
+#             ver += 1
+#             try:
+#                 if li[i][j+1] =='.' and li[i][j+2] == '.':
+#                     ver -=1
+#             except:
+#                 pass
+            
+            
+# print(ver, hor)
+
+# 5635
+# n = int(input())
+
+# info_list = []
+# for i in range(n):
+#     ndmy = list(map(str, input().split()))
+#     ndmy[1], ndmy[2], ndmy[3] = int(ndmy[1]), int(ndmy[2]), int(ndmy[3])
+#     info_list.append(ndmy)
+# oldy = info_list[0][3]
+# oldm = info_list[0][2]
+# oldd = info_list[0][1]
+# remember_old = info_list[0][0]
+# youngy = info_list[0][3]
+# youngm = info_list[0][2]
+# youngd = info_list[0][1]
+# remember_young = info_list[0][0]
+
+# for i in range(1,n):
+#     if info_list[i][3] > youngy:
+#         youngy = info_list[i][3]
+#         youngm = info_list[i][2]
+#         youngd = info_list[i][1]
+#         remember_young = info_list[i][0]
+#     elif info_list[i][3] == youngy:
+#         if info_list[i][2] > youngm:
+#             youngy = info_list[i][3]
+#             youngm = info_list[i][2]
+#             youngd = info_list[i][1]
+#             remember_young = info_list[i][0]
+#         elif info_list[i][2] == youngm:
+#             if info_list[i][1] > youngd:
+#                 youngy = info_list[i][3]
+#                 youngm = info_list[i][2]
+#                 youngd = info_list[i][1]
+#                 remember_young = info_list[i][0]
+
+#     if info_list[i][3] < oldy:
+#         oldy = info_list[i][3]
+#         oldm = info_list[i][2]
+#         oldd = info_list[i][1]
+#         remember_old = info_list[i][0]
+#     elif info_list[i][3] == oldy:
+#         if info_list[i][2] < oldm:
+#             oldy = info_list[i][3]
+#             oldm = info_list[i][2]
+#             oldd = info_list[i][1] 
+#             remember_old = info_list[i][0]
+#         elif info_list[i][2] == oldm:
+#             if info_list[i][1] < oldd:
+#                 oldy = info_list[i][3]
+#                 oldm = info_list[i][2]
+#                 oldd = info_list[i][1]
+#                 remember_old = info_list[i][0]
+    
+# print(remember_young)
+# print(remember_old)
+
+# 10769
+
+# S = input()
+# count_smile= S.count(':-)')
+# count_sad= S.count(':-(')
+
+# if count_smile + count_sad == 0:
+#     print('none')
+# elif count_smile > count_sad:
+#     print('happy')
+# elif count_smile < count_sad:
+#     print('sad')
+# elif count_smile == count_sad:
+#     print('unsure')
+
+# 2789
+
+# S = input()
+# list_S = list(S)
+# cambridge= ['C','A','M','B','R','I','D','G','E']
+# result =[]
+# count = 0
+
+# for i in range(len(S)):
+#     if list_S[i] not in cambridge:
+#         result.append(list_S[i])
+    
+# print(''.join(result))
+
+# 2711
+
+# T = int(input())
+
+# for i in range(T):
+#     a, b = map(str, input().split())
+#     a = int(a)
+#     b = list(b)
+#     b[a-1] =''
+#     print(''.join(b))
+
+# 10102
+
+# V =int(input())
+# a =list(input())
+# A = 0
+# B = 0
+# for i in range(V):
+#     if a[i] =='A':
+#         A +=1
+#     elif a[i] =='B':
+#         B +=1
+
+# if A > B:
+#     print('A')
+# elif B > A:
+#     print('B')
+# else:
+#     print('Tie')
+
+# 1919
+
+# A = list(input())
+# B = list(input())
+# A_count = [0] * 26
+# B_count = [0] * 26
+# count = 0
+
+# for i in range(len(A)):
+#     A_count[ord(A[i])-97] +=1
+
+# for j in range(len(B)):
+#     B_count[ord(B[j])-97] +=1
+
+# for i in range(26):
+#     if A_count[i] != B_count[i]:
+#         count += max([A_count[i],B_count[i]]) - min([A_count[i],B_count[i]])
+    
+# print(count)
+
+# 1225
+
+# a, b = map(str,input().split())
+# a_list = list(a)
+# b_list = list(b)
+# total = 0
+
+# for i in range(len(a_list)):
+#     a_list[i] = int(a_list[i])
+
+# for j in range(len(b_list)):
+#     total += sum(a_list) * int(b_list[j])
+
+# print(total)
+
+# 10821
+
+# a= list(map(int,input().split(',')))
+# print(len(a))
+
+# 2810
+
+# N = int(input())
+
+# L = list(input())
+# if L.count('L') >= 2:
+#     count = N - L.count('L') // 2 +1
+# else:
+#     count = N
+
+# print(count)
+
+# 5218
+
+# T = int(input())
+
+# for i in range(1, T+1):
+
+#     a,b = map(str,input().split())
+#     a = list(a)
+#     b = list(b)
+#     result= []
+
+#     for j in range(len(a)):
+#         if ord(b[j]) >= ord(a[j]):
+#             result.append(str(ord(b[j])-ord(a[j])))
+#         elif ord(a[j]) > ord(b[j]):
+#             result.append(str(ord(b[j])-ord(a[j])+26))
+
+#     print(f'Distances: {" ".join(result)}')
+
+# 11098
+
+# n = int(input())
+
+# for i in range(n):
+#     p = int(input())
+#     dic = {}
+#     for j in range(p):
+#         a, b = map(str, input().split())
+#         dic[int(a)] = b
+#     print(dic.get(max(dic)))
+    
+# 1244
+
+# n = int(input())
+# a = list(map(int,input().split()))
+# stu_num = int(input())
+
+# for k in range(stu_num):
+#     mf, re_num = map(int,input().split())
+
+#     if mf == 1:
+#         for i in range(n):
+#             if (i+1) % re_num == 0:
+#                 if a[i] == 0:
+#                     a[i] = 1
+#                 elif a[i] == 1:
+#                     a[i] = 0
+#     else:
+#         if a[re_num-1] == 0:
+#             a[re_num-1] = 1
+#         elif a[re_num-1] == 1:
+#             a[re_num-1] = 0
+#         j=1
+
+#         while True:
+#             if re_num-j >= 1 and re_num+j <= n:
+#                 if a[re_num+j-1] == 0 and a[re_num-j-1] == 0:
+#                     a[re_num+j-1], a[re_num-j-1] = 1, 1
+#                     j +=1
+#                     continue
+#                 elif a[re_num+j-1] == 1 and a[re_num-j-1] == 1:
+#                     a[re_num+j-1], a[re_num-j-1] = 0, 0
+#                     j +=1
+#                     continue
+#                 else:
+#                     break
+#             else:
+#                 break
+
+# for var in a[:-1]:
+#     print(var, end=" ")
+# print(a[-1])
+
+# 2309
+# import random
+
+# h_list = []
+# for i in range(9):
+#     height = int(input())
+#     h_list.append(height)
+# while True:
+#     ran_li = random.sample(h_list,7)
+#     if sum(ran_li) == 100:
+#         ran_li.sort()
+#         for v in ran_li:
+#             print(v)
+#             break
+
+# 2477
+
+# n = int(input())
+# dic = {}
+# lose =[]
+# for i in range(6):
+#     a,b = map(int,input().split())
+#     if str(a) in dic:
+#         if b> dic[str(a)]:
+#             lose.append([a,dic[str(a)]])
+#             dic[str(a)] = b
+
+#         else:
+#             lose.append([a,b])
+#     dic[str(a)] = b
+
+# print((max(dic['4'],dic['3'])*max(dic['2'],dic['1'])-lose[0][1]*lose[1][1])*n)
+
+# 11656
+
+S = list(map(str,input()))
+S_list=[]
+for i in range(len(S)-1,-1,-1):
+    s= ",".join(S[i:])
+    s = s.replace(",","")
+    S_list.append(s)
+S_list.sort()
+print(*S_list, sep="\n")
+
