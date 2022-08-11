@@ -949,3 +949,14 @@
 
 # print((max(dic['4'],dic['3'])*max(dic['2'],dic['1'])-lose[0][1]*lose[1][1])*n)
 
+# 11656
+
+S = list(map(str,input()))
+S_list=[]
+for i in range(len(S)-1,-1,-1):
+    s= ",".join(S[i:])
+    s = s.replace(",","")
+    S_list.append(s)
+S_list.sort()
+print(*S_list, sep="\n")
+
