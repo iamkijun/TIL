@@ -14,17 +14,16 @@ for t in range(1,T+1):
         li.append(AB)
 
     P = int(input())
+    P_count = [0] * P
 
-    C_list = [0] * (P+1)
+    C =[]
+    for _ in range(P):
+        C_el = int(input())
+        C.append(C_el)
 
     for i in range(N):
-        for j in range(2):
-            C_list[li[i][j+1]] += 1
+        if li[i][0]<= C[i] <= li[i][1]:
+            for j in range(li[i][0]-1,li[i][1]):
+                P_count[j] += 1
 
-
-    print(li)
-
-    for i in range(P):
-        C = int(input())
-
-    print(f'#{t}')
+    print(f'#{t}',*P_count)

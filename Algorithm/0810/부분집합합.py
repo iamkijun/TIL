@@ -7,7 +7,6 @@ for t in range(1,T+1):
     li = list(map(int, input().split()))
 
     count = 0
-
     for i in range(1<<len(li)):
         total=0
         for j in range(len(li)):
