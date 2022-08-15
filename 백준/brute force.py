@@ -1,3 +1,7 @@
+import sys
+sys.stdin = open("input.txt","r")
+
+
 # 2798
 
 # N, M = map(int, input().split())
@@ -129,9 +133,111 @@
 #         i+=1
 #     a=a_copy + 1
 
+# 1075
+
+# N = int(input())
+# F = int(input())
+
+# minV = 100
+
+# N = (N // 100) * 100
+
+# for i in range(100):
+#     val = (N+i) % F 
+#     if val == 0:
+#         if i < minV:
+#             minV = i
+# if minV < 10:
+#     minV = '0' + str(minV)
+# print(minV)
+
+# 3040
+
+# num_li = []
+
+# for _ in range(9):
+#     n = int(input())
+#     num_li.append(n)
+
+# for i in range(1<<9):
+#     count = 0
+#     total = []
+#     for j in range(i):
+#         if i & (1<<j):
+#             total.append(num_li[j])
+#             count+=1
+#     if count == 7 and sum(total) == 100:
+#         break
+
+# for j in range(7):
+#     print(total[j])
+
+# 10448
+
+# T = int(input())
+
+# def ureca(a):
+#     i = 2
+#     li = [1,]
+#     while li[-1]<=a:
+#         val = i*(i+1)//2
+#         li.append(val)
+#         i +=1
+    
+#     return li
+
+# for t in range(1,T+1):
+#     N = int(input())
+
+#     a = ureca(N)
+#     l = len(a)
+
+#     count = 0
+    
+#     for i in range(l):
+#         for j in range(l):
+#             for k in range(l):=
+#                 if a[i] + a[j] + a[k] == N:
+#                     count +=1
+#                     break
+#             if count >0:
+#                 break
+#         if count>0:
+#             break
+
+                    
+#     if count > 0:
+#         print(1,count)
+#     else:
+#         print(0)
+
+# 2851
+
+# li = []
+
+# for _ in range(10):
+#     n= int(input())
+#     li.append(n)
+
+# total = 0
+# for i in range(10):
+#     total += li[i]
+#     if total >= 100:
+#         if abs(100 -(total - li[i])) < abs(100 -total):
+#             print(total - li[i])
+#         else:
+#             print(total)
+#         break
+
+# if sum(li) < 100:
+#     print(sum(li))
+
+# 2702
+
 T = int(input())
-for t in range(1, T+1):
-    N = int(input())
-    for i in range(N):
-        li = list(map(int,input().split()))
-        print(li)
+
+for t in range(1,T+1):
+    a, b = map(int,input().split())
+
+    for i in range(min([a,b]),0,-1):
+        if 

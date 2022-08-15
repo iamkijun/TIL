@@ -1,11 +1,23 @@
 #  10872
-
+# 반복문으로
 # N = int(input())
 # total = 1
 # while N > 1:
 #     total *= N
 #     N -= 1
 # print(total)
+
+# 재귀함수로
+
+# def factorial(a):
+#     if a>1:
+#         return a * factorial(a-1)
+#     elif a==1:
+#         return 1
+#     elif a == 0:
+#         return 1
+# N = int(input())
+# print(factorial(N))
 
 #  10870
 
