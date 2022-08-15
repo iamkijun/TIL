@@ -234,10 +234,38 @@ sys.stdin = open("input.txt","r")
 
 # 2702
 
-T = int(input())
+# T = int(input())
 
-for t in range(1,T+1):
-    a, b = map(int,input().split())
+# for t in range(1,T+1):
+#     a, b = map(int,input().split())
+    
+#     small = 1
+    
+#     for i in range(min([a,b]),0,-1):
+#         if a % i == 0 and b % i == 0:
+#             small = i
+#             break
 
-    for i in range(min([a,b]),0,-1):
-        if 
+#     big = small * (a // small) * (b // small)
+
+#     print(big, small)
+
+# 2670
+
+N = int(sys.stdin.readline())
+n_list = []
+for t in range(N):
+    n = float(sys.stdin.readline())
+    n_list.append(n)
+
+maxV = 0
+to_li = []
+for i in range(N-1):
+    totalV = 1
+    for j in range(i,N):
+        totalV = totalV * n_list[j]
+        to_li.append(totalV)
+    if max(to_li) > maxV:
+        maxV = max(to_li)
+
+print(round(maxV,3))
