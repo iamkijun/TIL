@@ -250,22 +250,67 @@ sys.stdin = open("input.txt","r")
 
 #     print(big, small)
 
-# 2670
+# 2670, 시간초과
 
-N = int(sys.stdin.readline())
-n_list = []
-for t in range(N):
-    n = float(sys.stdin.readline())
-    n_list.append(n)
+# N = int(sys.stdin.readline())
+# n_list = []
+# for t in range(N):
+#     n = float(sys.stdin.readline())
+#     n_list.append(n)
 
-maxV = 0
-to_li = []
-for i in range(N-1):
-    totalV = 1
-    for j in range(i,N):
-        totalV = totalV * n_list[j]
-        to_li.append(totalV)
-    if max(to_li) > maxV:
-        maxV = max(to_li)
+# maxV = 0
+# to_li = []
+# for i in range(N-1):
+#     totalV = 1
+#     for j in range(i,N):
+#         totalV = totalV * n_list[j]
+#         to_li.append(totalV)
+#     if max(to_li) > maxV:
+#         maxV = max(to_li)
 
-print(round(maxV,3))
+# print(round(maxV,3))
+
+# 5618 시간초과
+
+# N = int(sys.stdin.readline())
+
+# li = list(map(int, sys.stdin.readline().split()))
+
+# val = []
+
+# for i in range(1,min(li)+1):
+    
+#     count = N
+
+#     for j in range(N):
+#         if li[j] % i != 0:
+#             count -=1
+#             break
+
+#     if count == N:
+#         print(i)
+
+# 11170
+
+# T = int(input())
+
+# for t in range(1,T+1):
+
+#     N, M = map(int, input().split())
+
+#     count = 0
+
+#     for i in range(N, M+1):
+#         while i > 0:
+#             if i % 10 == 0:
+#                 count +=1
+#                 i = i//10
+#             else:
+#                 i = i//10
+
+#     if N == 0:
+#         count +=1
+    
+#     print(count)
+        
+
