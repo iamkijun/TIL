@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt","r")
+sys.stdin = open("0816/input.txt","r")
 
 def one(arr):
     maxl = 0
