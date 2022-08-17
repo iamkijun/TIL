@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('input.txt','r')
+
 # #11654
 # N = input()
 
@@ -951,12 +954,93 @@
 
 # 11656
 
-S = list(map(str,input()))
-S_list=[]
-for i in range(len(S)-1,-1,-1):
-    s= ",".join(S[i:])
-    s = s.replace(",","")
-    S_list.append(s)
-S_list.sort()
-print(*S_list, sep="\n")
+# S = list(map(str,input()))
+# S_list=[]
+# for i in range(len(S)-1,-1,-1):
+#     s= ",".join(S[i:])
+#     s = s.replace(",","")
+#     S_list.append(s)
+# S_list.sort()
+# print(*S_list, sep="\n")
 
+
+# 3029
+
+# a = input()
+# b = input()
+
+# h1 = int(a[:2])
+# m1 = int(a[3:5])
+# d1 = int(a[6:])
+
+# h2 = int(b[:2])
+# m2 = int(b[3:5])
+# d2 = int(b[6:])
+# if h1 == h2 and m1 == m2 and d1 == d2:
+#     print('24:00:00')
+# else:
+#     h = h2 - h1
+#     m = m2 - m1
+#     d = d2 - d1
+
+#     if d < 0:
+#         d = d + 60
+#         m = m - 1
+#     if m < 0:
+#         m = m + 60
+#         h = h - 1
+#     if h < 0:
+#         h = h + 24
+
+#     if d < 10:
+#         d = '0' +str(d)
+#     if m < 10:
+#         m = '0' +str(m)
+#     if h < 10:
+#         h = '0' +str(h)
+
+#     print(f'{h}:{m}:{d}')
+
+# 9046
+# T = int(input())
+
+
+# for t in range(T):
+#     s= input()
+#     s =s.replace(' ','')
+
+#     counts = [0] * 26
+    
+#     for val in s:
+#         counts[ord(val)-97] += 1
+
+#     if counts.count(max(counts)) > 1:
+#         print("?")
+#     else:
+#         print(chr(counts.index(max(counts)) + 97))
+
+# 20154
+
+num = [3, 2, 1, 2, 3, 3, 3, 3, 1, 1, 3, 1, 3, 3, 1, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1]
+
+S = input()
+K = len(S)
+
+S_num = [0] * (K+1)
+
+for i in range(K):
+    S_num[i] = num[ord(S[i]) - 65]
+
+while S_num[1] != 0:
+    for i in range(0,len(S_num),2):
+        try:
+            S_num[i//2] = S_num[i] + S_num[i+1]
+            S_num[i+1] = 0
+        except:
+            pass
+    S_num = S_num[:len(S_num)//2] + [0]
+
+if S_num[0] % 2 == 1:
+    print("I'm a winner!")
+else:
+    print("You're the winner?")
