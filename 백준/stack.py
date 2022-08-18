@@ -134,3 +134,13 @@ sys.stdin = open("input.txt","r")
 #     stk.append(num)
 
 # print(stk)
+
+# 12605
+
+# T = int(input())
+
+# for t in range(1,T+1):
+
+#     li = list(map(str, input().split()))
+
+#     print(f'Case #{t}:',*li[::-1])

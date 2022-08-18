@@ -1,3 +1,4 @@
+from site import setquit
 import sys
 sys.stdin = open('input.txt','r')
 
@@ -1021,26 +1022,137 @@ sys.stdin = open('input.txt','r')
 
 # 20154
 
-num = [3, 2, 1, 2, 3, 3, 3, 3, 1, 1, 3, 1, 3, 3, 1, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1]
+# num = [3, 2, 1, 2, 3, 3, 3, 3, 1, 1, 3, 1, 3, 3, 1, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1]
 
-S = input()
-K = len(S)
+# S = input()
+# K = len(S)
 
-S_num = [0] * (K+1)
+# S_num = [0] * (K+1)
 
-for i in range(K):
-    S_num[i] = num[ord(S[i]) - 65]
+# for i in range(K):
+#     S_num[i] = num[ord(S[i]) - 65]
 
-while S_num[1] != 0:
-    for i in range(0,len(S_num),2):
-        try:
-            S_num[i//2] = S_num[i] + S_num[i+1]
-            S_num[i+1] = 0
-        except:
-            pass
-    S_num = S_num[:len(S_num)//2] + [0]
+# while S_num[1] != 0:
+#     for i in range(0,len(S_num),2):
+#         try:
+#             S_num[i//2] = S_num[i] + S_num[i+1]
+#             S_num[i+1] = 0
+#         except:
+#             pass
+#     S_num = S_num[:len(S_num)//2] + [0]
 
-if S_num[0] % 2 == 1:
-    print("I'm a winner!")
-else:
-    print("You're the winner?")
+# if S_num[0] % 2 == 1:
+#     print("I'm a winner!")
+# else:
+#     print("You're the winner?")
+
+
+# 4659
+
+# def good(s):
+    
+#     collection = ['a','e','i','o','u']
+#     count=0
+#     for i in range(len(s)):
+#         if s[i] in collection:
+#             count+=1
+    
+#     if count > 0:
+#         pass
+#     else:
+#         return 0
+            
+
+#     for i in range(len(s)-2):
+#         if s[i] in collection and s[i+1] in collection and s[i+2] in collection:
+#             return 0
+#         elif s[i] not in collection and s[i+1] not in collection and s[i+2] not in collection:
+#             return 0
+#         else:
+#             continue
+
+#     for i in range(len(s)-1):
+#         if s[i] == s[i+1]:
+#             if s[i] == 'e' and s[i+1] == 'e':
+#                 continue
+#             elif s[i] == 'o' and s[i+1] == 'o':
+#                 continue
+#             else:
+#                 return 0
+
+#     return 1
+
+# while True:
+#     S = input()
+#     if S == 'end':
+#         break
+
+#     if good(S):
+#         print(f'<{S}> is acceptable.')
+#     else:
+#         print(f'<{S}> is not acceptable.')
+
+# 16171
+
+# S = input()
+
+# K = list(input())
+
+# new = []
+# for i in range(len(S)):
+#     if S[i].isupper():
+#         new.append(S[i])
+#     elif S[i].islower():
+#         new.append(S[i])
+#     else:
+#         pass
+
+# s = ''.join(new)
+# k = ''.join(K)
+
+# if k in s:
+#     print(1)
+# else:
+#     print(0)
+
+# 6550
+
+# while True:
+#     try:
+#         s, t = map(str, input().split())
+
+#         S = list(s)
+#         T = list(t)
+#         len_s = len(S)
+#         new_T = []
+
+#         for val in T:
+#             if val in S:
+#                 new_T.append(val)
+
+#         count = 0
+
+#         print(S,new_T)
+#         idx =[]
+#         i = 0
+#         count = 0
+#         while count != len_s:
+
+#             if S[i] in new_T:
+#                 idx.append(new_T.index(new_T[i]))
+#                 print(idx,S[i],new_T)
+#                 i = i+1
+#             else:
+#                 i = i+1
+
+#             count+=1
+        
+#         print(idx)
+
+#         if count == 0:
+#             print('No')
+#         elif count == 1:
+#             print('Yes')
+
+#     except:
+#         break
