@@ -378,20 +378,22 @@ sys.stdin = open('input.txt','r')
 #             pass
 
 # # 10820 멈추는 법을 모르겠음
-# N= 4
-# for i in range(N):
-#     n = input()
-#     a,b,c,d = 0,0,0,0
-#     for i in range(len(n)):
-#         if n[i].islower():
-#             a+=1
-#         elif n[i].isupper():
-#             b+=1
-#         elif n[i].isdigit():
-#             c+=1
-#         elif n[i] ==" ":
-#             d+=1
-#     print(a,b,c,d)
+# while True:
+#     try:
+#         n = input()
+#         a,b,c,d = 0,0,0,0
+#         for i in range(len(n)):
+#             if n[i].islower():
+#                 a+=1
+#             elif n[i].isupper():
+#                 b+=1
+#             elif n[i].isdigit():
+#                 c+=1
+#             elif n[i] ==" ":
+#                 d+=1
+#         print(a,b,c,d)
+#     except:
+#         break
 
 # # 1373  시간초과
 # n = int(input())
@@ -1123,36 +1125,138 @@ sys.stdin = open('input.txt','r')
 
 #         S = list(s)
 #         T = list(t)
-#         len_s = len(S)
-#         new_T = []
 
+#         new_T = []
 #         for val in T:
 #             if val in S:
 #                 new_T.append(val)
 
-#         count = 0
+#         ans = 0
 
-#         print(S,new_T)
-#         idx =[]
-#         i = 0
-#         count = 0
-#         while count != len_s:
+#         for i in range(len(new_T)-len(S)+1):
+#             if S[0] == new_T[i]:
+#                 k = i + 1
+#                 j = 1
+#                 count = 1
+#                 for v in range(len(S)-1):
+#                     if S[j] in new_T[k:]:
+#                         k = i + new_T[k:].index(S[j]) + 2
+#                         j +=1
+#                         count +=1
+#                     else:
+#                         break
+#             if count == len(S):
+#                 ans = 1
+#                 break
 
-#             if S[i] in new_T:
-#                 idx.append(new_T.index(new_T[i]))
-#                 print(idx,S[i],new_T)
-#                 i = i+1
-#             else:
-#                 i = i+1
-
-#             count+=1
-        
-#         print(idx)
-
-#         if count == 0:
+#         if ans == 0:
 #             print('No')
-#         elif count == 1:
+#         elif ans == 1:
 #             print('Yes')
 
 #     except:
 #         break
+
+# 9342
+
+# T = int(input())
+
+# for t in range(1,T+1):
+#     S = list(input())
+#     print(S)
+#     count = 0
+    
+#     if 'A' in S[0:]:
+#         count += 1
+#     else:
+#         print('Good')
+#         continue
+
+#     if 'F' in S[S.index('A')+1:]:
+#         count += 1
+#     else:
+#         print('Good')
+#         continue
+    
+#     if 'C' in S[S[S.index('A')+1:].index('F')+1:]:
+#         count += 1
+#     else:
+#         print('Good')
+#         continue
+
+#     if len(S[S[S[S.index('A')+1:].index('F')+1:].index('C')+1:])==0:
+#         pass
+#     elif len(S[S[S[S.index('A')+1:].index('F')+1:].index('C')+1:])==1:
+#         if S[S[S[S.index('A')+1:].index('F')+1:].index('C')+1:] in ['A','B','C','D','E','F']:
+#             pass
+#         else:
+#             print('Good')
+#             continue
+#     else:
+#         print('Good')
+#         print(count)
+#         continue
+
+#     print(count)
+
+# 1764
+
+# N, M = map(int, input().split())
+
+# N_list = [' '] * N
+# M_list = [' '] * M
+
+# for n in range(N):
+#     N_name = input()
+#     N_list[n] = N_name
+
+# for m in range(M):
+#     M_name = input()
+#     M_list.append(M_name)
+
+
+# NM_list = set(N_list) & set(M_list)
+# NM_list = list(NM_list)
+# NM_list.sort()
+
+# print(len(NM_list))
+# for val in NM_list:
+#     print(val)
+
+# 20291
+
+# N = int(input())
+
+# dic = {}
+
+# for _ in range(N):
+#     S = input()
+#     exten = S[S.find('.')+1:] #확장자
+    
+#     if exten not in dic:
+#         dic[exten] = 1
+#     elif exten in dic:
+#         dic[exten] += 1
+
+# sorted_dic = sorted(dic.items())
+
+# for i in range(len(sorted_dic)):
+#     print(*sorted_dic[i])
+
+# 17413
+
+# S = list(input())
+
+# new_S = []
+# stk = []
+
+# for i in range(len(S)):
+#     if S[i] == '<':
+#         idx_s = i
+#         stk.append('<')
+#     elif S[i] == '>':
+#         idx_e = i
+#         stk.pop(-1)
+#         new_S.append(''.join(S[idx_s:idx_e+1]))
+    
+# print(new_S)
