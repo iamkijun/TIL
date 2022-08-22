@@ -47,14 +47,3 @@
 
 # print(solve(n))
 
-# #4673 진행중
-for i in range(1,10001):
-    if i == 10000:
-        
-    elif i >= 1000:
-
-    elif i>= 100:
-
-    elif i>= 10:
-
-    else:

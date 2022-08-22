@@ -1,0 +1,13 @@
+import sys
+sys.stdin = open('input.txt','r')
+
+a,b,c,d,e,f = map(int, input().split())
+
+def doub(a,b,c,d,e,f):
+    for i in range(-999,1000):
+        for j in range(-999,1000):
+            if (a*i + b*j == c) and (d*i + e*j == f):
+                x, y = i, j
+                return [i, j]
+
+print(*doub(a,b,c,d,e,f))
