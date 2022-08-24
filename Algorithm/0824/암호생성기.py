@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('0824/input.txt','r')
+sys.stdin = open('input.txt','r')
 
 for t in range(1,11):
     N = int(input())
@@ -15,9 +15,7 @@ for t in range(1,11):
             break
         
         #[2] 연산작업
-        a= q[0]-(cnt+1)
-        q.pop(0)
-        q.append(a)
+        q.append(q.pop(0)-(cnt+1))
 
         cnt +=1
         
