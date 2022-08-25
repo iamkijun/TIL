@@ -1,52 +1,38 @@
 import sys
-sys.stdin = open('IM추천문제/input.txt','r')
+sys.stdin = open('input.txt','r')
 
 N, K = map(int, input().split())
 
-S_list = []
-st_list = []
+li = ['?'] * N
+iserror = 0
 
 for i in range(K):
     S, st = map(str, input().split())
-    S = int(S)
-    S_list.append(S)
-    st_list.append(st)
+    S = int(S) % N
+    
+    #바퀴 돌리기, 뒤에 s칸이 앞으로 당겨오는 느낌!!
+    li = li[-S:] + li[:-S] 
+    
+    #화살표가 가르키는 지점 확인
 
-li = ['?'] * N
-a = 0 #시작점
-
-
-iserror = 0
-for i in range(K):
-    if S_list[i]-a > 0:
-        if li[S_list[i]-a] =='?':
-            li[S_list[i]-a] = st_list[i]
-            a = S_list[i]-a             #시작점 초기화
-        elif li[S_list[i]-a] == st_list[i]:
-            pass
-        else:
+    # 아직 안정해졌다면, 
+    if li[0] =='?':
+        # st가 이미 li안에 있으면 중복이므로 오류
+        if st in li:
             iserror = 1
             break
-
-    elif S_list[i]-a < 0:
-        if li[S_list[i]-a+8] =='?':
-            li[S_list[i]-a+8] = st_list[i]
-            a = S_list[i]-a+8             #시작점 초기화
-        elif li[S_list[i]-a+8] == st_list[i]:
-            pass
+        # st로 변경
         else:
-            iserror = 1
-            break
-    print(li)
+            li[0] = st
+    #들어가려는 자리가 st와 같다면 그대로 내비둠
+    elif li[0] == st:
+        pass
+    #들어가려는 자리가 st와 다르다면 오류
+    else:
+        iserror = 1
+        break
 
 if iserror == 1:
     print("!")
 else:
-    print(li)
-
-    # li = li[::-1]*2
-    # print(li[li.index(st):-2])
-
-
-
-
+    print(''.join(li))
