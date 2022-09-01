@@ -15,7 +15,7 @@ print(num_li)
 
 stk = []
 k = 1
-resul
+
 for i in range(n):
     while True:
         if new[i] == num_li[i]:
