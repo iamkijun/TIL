@@ -6,4 +6,10 @@ From 22/07/15
 ---
 **[파이썬](https://github.com/iamkijun/Python)** :D
 
+**[HTML/CSS](./Web/)** :D
+
+**[알고리즘](./Algorithm/)** :D
+
 **[SWEA](https://github.com/iamkijun/SWEA)** :D
+
+**[백준](./BOJ/)** :D
