@@ -1,12 +1,15 @@
 import sys
 sys.stdin = open('input.txt','r')
+input = sys.stdin.readline
+
+from collections import deque
 
 N = int(input())
 
-Q = list(range(1,N+1))
+queue = deque([i for i in range(1,N+1)])
 
-while len(Q) != 1:
-    Q.pop(0)
-    Q.append(Q.pop(0))
+while len(queue) >1:
+    queue.popleft()
+    queue.append(queue.popleft())
 
-print(*Q)
+print(queue[0])
