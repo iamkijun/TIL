@@ -6,6 +6,7 @@ sys.stdin = open('input.txt','r')
 #부모- 자식 순
 #4
 #1 2 1 3 3 4 3 5
+
 def find_root(V):
     for i in range(1, V+1):
         if par[i] == 0:
@@ -46,7 +47,7 @@ for i in range(E):
         ch2[p] = c
     par[c] = p
 root = find_root(V)
-print(par)
-# preorder(root)
+
+preorder(root)
 # inorder(root)
-postorder(root)
+# postorder(root)
