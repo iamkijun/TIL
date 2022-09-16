@@ -16,7 +16,7 @@ def postorder(n):
     else:
         return 0
 
-for t in range(1,2):
+for t in range(1,11):
 
     N = int(input())
 
@@ -25,7 +25,7 @@ for t in range(1,2):
     for i in range(1,N+1):
         li = list(map(str, input().split()))
         ans.append(li)
-    print(ans)
+
     result = postorder(1)
 
     print(f'#{t} {int(result)}')

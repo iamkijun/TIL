@@ -11,6 +11,5 @@ for t in range(1,2):
 
     K = 1
     for i in range(N):
-
         for j in range(M):
             arr[i][j-k+1:j+k]
