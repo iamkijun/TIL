@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a1f25d54-2ebf-4753-addb-62aba04eb8ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0923/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/0923/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BOJ/Greedy/21758.py" beforeDir="false" afterPath="$PROJECT_DIR$/../BOJ/Greedy/21758.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +42,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.정식이의_은행업무">
+  <component name="RunManager" selected="Python.홈_방범_서비스">
     <configuration name="최소합" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0922" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -64,6 +68,9 @@
       <module name="Algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0922" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -132,13 +139,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="홈_방범_서비스" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Algorithm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0923" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0923/홈_방범_서비스.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.정식이의_은행업무" />
-        <item itemvalue="Python.정식이의_은행업무" />
-        <item itemvalue="Python.정식이의_은행업무" />
-        <item itemvalue="Python.정식이의_은행업무" />
-        <item itemvalue="Python.정식이의_은행업무" />
+        <item itemvalue="Python.홈_방범_서비스" />
+        <item itemvalue="Python.홈_방범_서비스" />
+        <item itemvalue="Python.홈_방범_서비스" />
+        <item itemvalue="Python.홈_방범_서비스" />
+        <item itemvalue="Python.홈_방범_서비스" />
       </list>
     </recent_temporary>
   </component>
