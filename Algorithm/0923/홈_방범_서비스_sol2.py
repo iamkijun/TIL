@@ -8,10 +8,7 @@ for t in range(1,T+1):
 
     arr = [list(map(int, input().split())) for _ in range(N)]
 
-    max_profit = 0
     max_count = 0
-
-
 
     for i in range(N):
         for j in range(N):
@@ -27,9 +24,10 @@ for t in range(1,T+1):
                 K += 1
                 move = 1
                 while move<=K:
+                    move += 1
                     for di, dj in ((0,1),(0,-1),(1,0),(-1,0)):
                         ni, nj = i+di, j+dj
-                        move +=1
+
                         if 0<=ni<N and 0<=nj<N and arr[ni][nj] == 1:
                             cnt += 1
 
@@ -37,12 +35,7 @@ for t in range(1,T+1):
                 cost = K * K + (K - 1) * (K - 1)  # 운영 비용
                 profit = income - cost  # 보안 회사의 이익
 
-                if profit > max_profit:
-                    max_profit = profit
+                if profit > 0 and cnt > max_count:
                     max_count = cnt
-
-                    print("<<<<<<<<<<<<<여기닷!!!",i,j,cnt)
-
-                print(K, profit)
 
     print(f'#{t} {max_count}')
