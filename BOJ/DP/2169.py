@@ -18,17 +18,18 @@ NASA에서는 화성 탐사를 위해 화성에 무선 조종 로봇을 보냈�
 
 import sys
 sys.stdin = open('DP/input.txt','r')
-
+sys.setrecursionlimit = 10**9
 def dfs(si,sj):
     global cnt
 
     if si == N and sj == M:
+        global max_val
         if cnt >= max_val:
             max_val = cnt
         return
 
     # 좌/우/하 이동
-    for di, dj in ((0,-1),(0,1),(-1,0)):
+    for di, dj in ((0,-1),(0,1),(1,0)):
         ni, nj = si+di, sj+dj
         
         # 범위 안에 있고, 아직 방문하지 않은 곳이라면
@@ -47,12 +48,7 @@ arr = [[0]*(M+1)] + [[0] + list(map(int, input().split())) for _ in range(N)]
 visited = [[0]*(M+1) for _ in range(N+1)]
 
 max_val = 0
-cnt = 0
-
-for val in arr:
-    print(val)
-for val in visited:
-    print(val)
+cnt = arr[1][1]
 
 dfs(1,1)
 

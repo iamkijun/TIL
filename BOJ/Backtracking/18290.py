@@ -1,37 +1,37 @@
 import sys
 sys.stdin = open('Backtracking/input.txt','r')
 
-N,M,K = map(int, input().split())
+di = [1,-1,0,0]
+dj = [0,0,1,-1]
 
-arr = [[0]*(M+1)] + [[0] + list(map(int, input().split())) for _ in range(N)]
-
-visited = [[0] * (M+1) for _ in range(N+1)]
-max_val = 0
-
-def dfs(x,j,cnt, ans):
-    global max_val
-
+def dfs(x,y,cnt, ans):
     if cnt == K:
-        if ans > max_val:
-            max_val = ans
+        global max_val
+        max_val = max(ans,max_val)
         return
 
     for i in range(1,N+1):
         for j in range(1,M+1):
-
-            if visited[i][j] == 0:
+            
+            if visited[i][j]:
                 continue
         
-            for di,dj in ((1,0),(-1,0),(0,1),(0,-1)):
-                ni = i+di
-                nj = j+dj
+            for x in range(4):
+                ni,nj = i+di[x], j+dj[x]
                 if 1<=ni<=N and 1<=nj<=M and visited[ni][nj]:
                     break
+            
             else:
-                visited[i][j] = 1
+                visited[i][j] = True
                 dfs(i,j,cnt+1,ans+arr[i][j])
-                visited[i][j] = 0
+                visited[i][j] = False
 
-dfs(0,0,0,0)
+N,M,K = map(int, input().split())
 
+arr = [[0]*(M+1)] + [[0] + list(map(int, input().split())) for _ in range(N)]
+
+visited = [[False] * (M+1) for _ in range(N+1)]
+max_val = -10000*K
+
+dfs(1,1,0,0)
 print(max_val)
