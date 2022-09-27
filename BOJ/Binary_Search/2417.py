@@ -1,10 +1,10 @@
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open('Binary_Search/input.txt','r')
 
 N = int(input())
 
 s = 0
-e = N
+e = N-1
 
 while s<=e:
     mid = (s+e) // 2
