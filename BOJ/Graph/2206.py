@@ -9,6 +9,7 @@ sys.stdin = open("Graph/input.txt","r")
 0111
 0000
 '''
+
 N, M = map(int, input().split())
 
 arr = [['1']* (M+2)] + [['1'] + list(input()) + ['1'] for _ in range(N)] + [['1']* (M+2)]
