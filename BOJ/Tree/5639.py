@@ -1,29 +1,33 @@
 import sys
 sys.stdin = open('Tree/input.txt','r')
 
-tree = [0]
-idx = 1
+'''
+50
+30
+24
+5
+28
+45
+98
+52
+60
+'''
+
+def postorder(n):
+    
+
+    postorder(n*2)
+    postorder(n*2+1)
+    print(n, end=" ")
+
+tree = []
+
 while True:
     try:
         n = int(input())
-
         tree.append(n)
-
-        idx += 1
     except:
         break
-ch1 = [0] * len(tree)
-ch2 = [0] * len(tree)
+print(tree)
 
-for idx,val in enumerate(tree):
-    if idx < 
-    print(idx,val)
-    
-
-def postorder(n):
-    if 2*n+1 <= len(tree)-1:
-        postorder(tree[2*n])
-        postorder(tree[2*n+1])
-        print(n)
-
-postorder(1)
+arr = []

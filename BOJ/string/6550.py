@@ -5,7 +5,7 @@ while True:
     try:
         s, t = input().split()
 
-        print(s,t)
+        # print(s,t)
         idx = 0
         while True:
             if len(s) >= len(t)-idx:
@@ -19,7 +19,7 @@ while True:
                     idx +=1
             else:
                 idx += 1
-            print(s,t[idx:idx+len(s)])
-            print(idx)
+            # print(s,t[idx:idx+len(s)])
+            # print(idx)
     except:
         break
