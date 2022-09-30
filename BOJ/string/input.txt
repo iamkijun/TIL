@@ -1,4 +1,1 @@
-sequence subsequence
-person compression
-VERDI vivaVittorioEmanueleReDiItalia
-caseDoesMatter CaseDoesMatter
+<int><max>2147483647<long long><max>9223372036854775807
