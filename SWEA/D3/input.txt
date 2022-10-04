@@ -1,6 +1,4 @@
-5
-abcdefghijklmnopqrstu
-abcdefghijklmnopqrstuvwzyx
-abcefghijk
-xyz
-absolute
+3
+1
+2
+8
