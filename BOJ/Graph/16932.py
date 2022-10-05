@@ -7,6 +7,8 @@ from collections import deque
 
 '''
 1차시도 - 시간초과
+아이디어 - 전체 배열을 순회하며 0인 지점을 1로 바꿔주면 최장거리 탐색
+
 def bfs(i,j):
     q = deque()
     cnt = 0
@@ -45,6 +47,9 @@ print(max_distance)
 '''
 
 #1로 이어져 있는 경로 그룹화 작업, cnt = 그룹의 길이
+#아이디어
+#전체 배열을 순회하며 덩어리별로 길이를 저장, 이후 0인 지점을 순회하며 상하좌우에 chunk만큼 더해주기
+
 def bfs(i,j):
     cnt = 1
     q = deque()
@@ -112,7 +117,7 @@ for ci, cj in zeros:
 
     #그룹의 길이 더하기
     for val in temp:
-        distance += group[val]
+        distance +=  group[val]
 
     max_distance = max(max_distance,distance)
 
