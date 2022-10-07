@@ -8,26 +8,31 @@ T = int(input())
 
 bdg = int(input())
 
-n = 2 #현재 반복 횟수
-bdg_num = 4
-bdg_li = []
-cnt = 0
-while True:
-    bdg_li += [0,1,0,1]+ [0]*n + [1]*n
-    cnt += bdg_num//2
-    if cnt < T:
-        bdg_num += 1
-        n+=1
-    else:
-        
+def finding():
+    n = 2 #현재 반복 횟수
+    cnt = 0
+    total = 0
 
-print(bdg_li)
+    while True:
+        bdg_li = [0,1,0,1]+ [0]*n + [1]*n
+        cnt += len(bdg_li)//2
 
+        if cnt >= T:
+            
+            cnt -= len(bdg_li)//2
 
+            for val in bdg_li:
 
-for i in range(len(bdg_li)):
-    if bdg_li[i] == bdg:
-        cnt += 1
-        if cnt == T:
-            print(i%A)
-            break
+                total+=1
+
+                if val == bdg:
+                    cnt+=1
+
+                    if cnt == T:
+                        return total
+
+        else:
+            n+=1
+            total += len(bdg_li)
+
+print((finding()-1)%A)
