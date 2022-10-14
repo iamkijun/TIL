@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('Queue/input.txt','r')
+sys.stdin = open('Queue22/input.txt','r')
 
 from collections import deque
 

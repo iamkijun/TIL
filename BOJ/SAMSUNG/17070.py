@@ -1,64 +1,38 @@
 import sys
-sys.stdin = open('SAMSUNG/input.txt','r')
-
-from collections import deque
+sys.stdin = open('input.txt','r')
 
 N = int(input())
 
-def bfs():
-    global cnt
-
-    q = deque()
-    q.append([[1,1],[1,2]])
-
-    while q:
-        
-        pipe = q.popleft()
-        
-        if pipe[1] == [N,N]:
-            cnt += 1
-            continue
-
-        # [1] 가로일 경우
-        if pipe[0][0] == pipe[1][0] and pipe[0][1] + 1 == pipe[1][1]:
-            # [1-1] 가로 추가
-            if pipe[1][1] +1 <= N and arr[pipe[1][0]][pipe[1][1] + 1] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0], pipe[1][1] + 1]])
-                
-            # [1-2] 대각선 추가
-            if pipe[1][0] +1 <=N and pipe[1][1] +1 <= N and arr[pipe[1][0]][pipe[1][1] + 1] == 0 and arr[pipe[1][0] + 1][pipe[1][1]] == 0 and arr[pipe[1][0] + 1][pipe[1][1] + 1] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0]+1, pipe[1][1] + 1]])
-                
-            
-        # [2] 세로일 경우
-        elif pipe[0][0]+1 == pipe[1][0] and pipe[0][1] == pipe[1][1]:
-            # [2-1] 세로 추가
-            if pipe[1][0] +1 <= N and arr[pipe[1][0] + 1][pipe[1][1]] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0] + 1, pipe[1][1]]])
-            # [2-2] 대각선 추가
-            if pipe[1][0] +1 <=N and pipe[1][1] +1 <= N and arr[pipe[1][0]][pipe[1][1] + 1] == 0 and arr[pipe[1][0] + 1][pipe[1][1]] == 0 and arr[pipe[1][0] + 1][pipe[1][1] + 1] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0]+1, pipe[1][1] + 1]])
-
-        # [3] 대각선일 경우
-        elif pipe[0][0]+1 == pipe[1][0] and pipe[0][1]+1 == pipe[1][1]:
-            # [3-1] 가로 추가
-            if pipe[1][1] +1 <= N and arr[pipe[1][0]][pipe[1][1] + 1] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0], pipe[1][1] + 1]])
-            # [3-2] 세로 추가
-            if pipe[1][0] +1 <= N and arr[pipe[1][0] + 1][pipe[1][1]] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0]+ 1, pipe[1][1]]])
-            # [3-3] 대각선 추가
-            if pipe[1][0] +1 <=N and pipe[1][1] +1 <= N and arr[pipe[1][0]][pipe[1][1] + 1] == 0 and arr[pipe[1][0] + 1][pipe[1][1]] == 0 and arr[pipe[1][0] + 1][pipe[1][1] + 1] == 0:
-                q.append([[pipe[1][0], pipe[1][1]],[pipe[1][0]+1, pipe[1][1] + 1]])
-
-    return
-
-
-
 arr = [[1] * (N+1)] + [[1] + list(map(int, input().split())) for _ in range(N)]
+
+HO = 0 #가로
+VIR = 1 #세로
+DIAG = 2 #대각
 
 cnt = 0
 
-bfs()
+def dfs(nowy, nowx, type):
+    global cnt
+    if (nowy, nowx) == (N, N):
+        cnt += 1
+        return
+
+    #[1] 가로로 이동 가능한 경우
+    if type == HO or type == DIAG:
+        if nowx < N and arr[nowy][nowx+1] == 0:
+            dfs(nowy, nowx+1, HO)
+
+    #[2] 세로로 이동 가능한 경우
+    if type == VIR or type == DIAG:
+        if nowy < N and arr[nowy+1][nowx] == 0:
+            dfs(nowy+1, nowx, VIR)
+
+    #[3] 대각선으로 이동 가능한 경우
+    if nowx< N and nowy< N:
+        if arr[nowy+1][nowx] == 0 and arr[nowy][nowx+1] == 0 and arr[nowy+1][nowx+1] == 0:
+            dfs(nowy+1, nowx+1, DIAG)
+
+
+dfs(1, 2, HO)
 
 print(cnt)
