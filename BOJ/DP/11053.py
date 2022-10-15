@@ -5,10 +5,11 @@ N = int(input())
 
 li = list(map(int, input().split()))
 
-dp = [0] * N
-dp[0] = li[0]
+dp = [1] * N
 
 for i in range(1,N):
-    dp[i] = max(dp[i-1]+li[i],li[i])
+    for j in range(i):
+        if li[i] > li[j]:
+            dp[i] = max(dp[i],dp[j]+1)
 
-print(max(dp))
+print(max(dp)) 
