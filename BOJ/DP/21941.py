@@ -7,11 +7,13 @@ abc 10
 xyz 5
 '''
 
+#제한된 선택지에서 선택하는 문제는, DP로 접근하자.
+
 def dfs(idx):
     # 예외처리: 범위를 벗어나면 종료
     if idx >= N:
         return 0
-    
+        
     # 이미 처리한 idx면 종료
     if dp[idx] != -1:
         return dp[idx]
