@@ -8,7 +8,6 @@ class ArticleListSerializer(serializers.ModelSerializer):
         model = Article
         fields = ('id', 'title',)
 
-
 class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
