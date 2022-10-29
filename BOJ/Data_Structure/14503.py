@@ -1,37 +1,43 @@
+from os import curdir
 import sys
 sys.stdin = open('Data_Structure/input.txt')
 
 from collections import deque
 
+# d => 0,3,2,1 순서로 돌아야한다.(좌->하->우->상)
+di = [-1,0,1,0]
+dj = [0,1,0,-1]
+
 def bfs(r,c,d):
     global cnt
 
-    q = deque()
-    q.append([r,c,d])
     visited[r][c] = 1
     cnt += 1
 
-    while q:
-        current_r, current_c, current_d = q.popleft()
-        d_cnt = 0
+    while True:
+        flag = 0
+        for _ in range(4):
+            next_r= r+di[(d+3)%4]
+            next_c= c+dj[(d+3)%4]
 
-        while d_cnt < 4:
-            if current_d == 0:
-                next_r, next_c = current_r, current_c
+            d = (d+3)%4
 
-                if 0<=next_r<N and 0<=next_c<M and arr[next_r][next_c] != 1 and not visited[next_r][next_c]:
-                    q.append([next_r,next_c,current_d])
-
-                else:
-                    current_d = (current_d + 1) % 4
-                    d_cnt += 1
-                    continue
-            
-        
-        if d_cnt == 4:
-
-            if (current_d + 2) % 4
-
+            if 0<=next_r<N and 0<=next_c<M and arr[next_r][next_c] == 0 and not visited[next_r][next_c]:
+                
+                visited[next_r][next_c] = 1
+                r = next_r
+                c = next_c
+                cnt +=1
+                flag = 1
+                break
+    
+        if flag == 0:       #네 방향 모두 청소되었을 때
+            if arr[r-di[d]][c-dj[d]] == 1:   #후진했는데 벽으로 막혔을 때   
+                print(cnt)
+                break
+            else:                           #후진 가능
+                r = r - di[d]
+                c = c - dj[d]
 
 
 N, M = map(int, input().split())
