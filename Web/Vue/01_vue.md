@@ -1,5 +1,10 @@
 ## 1031 VUE
 ---
+### MVVM 패턴
+- Model: JSON
+- View: DOM
+- View Model: DOM에 대한 변경사항을 즉각적으로 반영
+
 ### Front-end
 - 사용자에게 보여주는 화면 만들기
 
@@ -17,9 +22,9 @@ CSR 방식의 장점
 - BE와 FE의 작업 영역을 명확히 분리 할 수 있음. 협업에 용이
 
 ### Vue의 구조
-HTML ( <template> )
-JS ( <script> )
-CSS ( <style> )
+HTML ( `<template>` )
+JS ( `<script>` )
+CSS ( `<style>` )
 
 부착해야지만 쓸 수 있다.
 
@@ -28,22 +33,43 @@ CSS ( <style> )
 
 ### data
 - 데이터 객체는 반드시 기본 객체 {} (Object)여야 함.
-- interpolation {{}}을 통해 view에 렌더링 가능함.
+- interpolation {{}}을 통해 view에 랜더링 가능함.(선언적 랜더링)
 
 ### Directives
 - v-접두사가 있는 특수 속성에는 값을 할당할 수 있음
   - 값에는 JS 표현식을 작성할 수 있음
 - directive의 역할은 표현식의 값이 변경될 때 반응적으로 DOM에 적용하는 것
 
+-v-text
+  - {{}} shortcut
 -v-on
   - @ shortcut
 -v-bind
+  - : shortcut
+-v-if
+  - 요소 자체가 DOM에 보이지 않음
+-v-show
+  - display: none 처리해서 안보이게 만든다.
+-v-model
+  - Vue instance와 DOM의 양방향 바인딩
+-v-for
+  - key가 없어도 잘 돌아감
+  - 하지만 있으면 좋다.
+
+일반적 this -> 내가 속한 객체
+하지만 화살표 함수를 쓰면 => 하나 상위의 객체
 
 method VS computed
 - method
   - 호출 될 때마다 함수를 실행
   - 같은 결과여도 매번 새롭게 계산
-- computed
-  - 함수의 종속 대상의 변화에 따라 계산 여부가 결정됨
+- computed (확장된 데이터, 데이터의 확장)
+  - 함수의 종속 대상의 변화에 따라 **계산 여부**가 결정됨
   - 종속 대상이 변하지 않으면 항상 저장(캐싱)된 값을 반환
+  - 확장된 값이 필요할 때
 
+- watch
+  - computed보다 무거운 작업을 사용할 때
+
+### Template Interpolation (보간법)
+- 알려진 데이터에서 새로운 데이터로 지정을 구성하는 방법
