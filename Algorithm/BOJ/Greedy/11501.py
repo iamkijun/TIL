@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt","r")
+sys.stdin = open("Greedy/input.txt","r")
 
 input = sys.stdin.readline
 
@@ -13,17 +13,12 @@ for t in range(1,T+1):
 
     total = 0
 
-    while True:
-        if len(li) <= 1 or li== sorted(li,reverse=True):
-            break 
-        maxV = max(li)
-        idx = li.index(maxV)
+    mx = li[-1]
+    
+    for i in range(N-2,-1,-1):
+        if li[i] > mx:     #오늘 가격이 mx보다 크다면
+            mx =li[i]
+        else:
+            total += mx-li[i]
 
-        zero_list= [0] * len(li)
-        zero_list= [maxV] * idx
-
-        total += sum(zero_list[:idx]) - sum(li[:idx])
-
-        li = li[idx+1:]
-
-    print(f'{total}')
+    print(total)
