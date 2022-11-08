@@ -15,7 +15,7 @@ export default {
     VideoListItem,
   },
   props : {
-    appToList : Array,
+    appToList: Array,
   }
   ,
   methods: {

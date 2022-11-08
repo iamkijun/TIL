@@ -1,16 +1,14 @@
 <template>
   <div id="app">
     <h1>{{ message }}</h1>
-    <h2>입력된 문자의 길이는 {{ messageLength }}</h2>
-    <input 
-      type="text"
-      @keyup.enter="changeMessage"
-      v-model="inputData"
-    >
+    <h2>{{ messageLength }}</h2>
+    <h3>{{ doubleLength }}</h3>
+    <input type="text" @keyup.enter="chagneMessage" v-model="inputData">
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data() {
@@ -18,18 +16,21 @@ export default {
       inputData: null,
     }
   },
-  computed: {
+  computed : {
     message() {
       return this.$store.state.message
     },
     messageLength() {
       return this.$store.getters.messageLength
     },
+    doubleLength() {
+      return this.$store.getters.doubleLength
+    }
   },
   methods: {
-    changeMessage() {
-      const newMessage = this.inputData
-      this.$store.dispatch('changeMessage', newMessage)
+    chagneMessage() {
+      this.$store.dispatch('changeMessage', this.inputData)
+      this.inputData = null
     }
   }
 }

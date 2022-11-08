@@ -9,20 +9,19 @@
 </template>
 
 <script>
-import TodoListItem from './TodoListItem.vue'
+import TodoListItem from '@/components/TodoListItem'
 
 export default {
-  name : 'TodoList',
+  name: 'TodoList',
   components: {
-    TodoListItem
+    TodoListItem,
   },
   computed: {
     todos() {
       return this.$store.state.todos
     }
-  }
+  },
 }
-
 </script>
 
 <style>

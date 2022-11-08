@@ -1,10 +1,10 @@
 <template>
   <div>
-    <span
+    <span 
       @click="updateTodoStatus"
       :class="{ 'is-completed': todo.isCompleted }"
     >
-    {{ todo.title }}
+      {{ todo.title }}
     </span>
     <button @click="deleteTodo">Delete</button>
   </div>
@@ -12,18 +12,19 @@
 
 <script>
 export default {
-  name : 'TodoListItem',
-  props : {
+  name: 'TodoListItem',
+  props: {
     todo: Object,
   },
-  methods : {
+  methods: {
     deleteTodo() {
       // console.log('삭제 메서드 호출!!')
-      this.$store.dispatch('deleteTodo',this.todo)
+      this.$store.dispatch('deleteTodo', this.todo)
+      // this.$store.commit('DELETE_TODO', this.todo)
     },
     updateTodoStatus() {
       this.$store.dispatch('updateTodoStatus', this.todo)
-    }
+    },
   }
 }
 </script>

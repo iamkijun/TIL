@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistate'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
@@ -15,21 +15,16 @@ export default new Vuex.Store({
     allTodosCount(state) {
       return state.todos.length
     },
-    completedTodosCount(state){
-      // 1. 완료된 투두만 모아놓은 새로운 배열 생성
+    completedTodosCount(state) {
+      // 1. 완료된 투두만 모아놓은 새로운 배열을 생성
       const completedTodos = state.todos.filter((todo) => {
         return todo.isCompleted === true
       })
       // 2. 그 새로운 배열의 길이를 반환
       return completedTodos.length
     },
-    uncompletedTodosCount(state){
-      // 1. 완료된 투두만 모아놓은 새로운 배열 생성
-      const completedTodos = state.todos.filter((todo) => {
-        return todo.isCompleted === false
-      })
-      // 2. 그 새로운 배열의 길이를 반환
-      return completedTodos.length
+    unCompletedTodosCount(state, getters) {
+      return getters.allTodosCount - getters.completedTodosCount
     },
   },
   mutations: {
@@ -40,19 +35,28 @@ export default new Vuex.Store({
       const index = state.todos.indexOf(todoItem)
       state.todos.splice(index, 1)
     },
-    UPDATE_TODO_STATUS(state,todoItem) {
+    UPDATE_TODO_STATUS(state, todoItem) {
+      console.log(todoItem)
+      // todos 배열에서 선택된 todo의 is_completed값만 토글한 후
+      // 업데이트 된 todos 배열로 되어야 함
+
+      // made by 승태
+      // const index = state.todos.indexOf(todoItem)
+      // state.todos[index].isCompleted = !state.todos[index].isCompleted
+
       state.todos = state.todos.map((todo) => {
         if (todo === todoItem) {
           todo.isCompleted = !todo.isCompleted
-        }
+        } 
         return todo
       })
     },
-    LOAD_TODOS(state) {
-      const localStorageTodos = localStorage.getItem('todos')
-      const parsedTodos = JSON.parse(localStorageTodos)
-      state.todos =parsedTodos
-    }
+    // LOAD_TODOS(state) { 
+    //   const localStorageTodos = localStorage.getItem('todos')
+    //   const parsedTodos = JSON.parse(localStorageTodos)
+    //   // console.log(parsedTodos)
+    //   state.todos = parsedTodos
+    // },
   },
   actions: {
     createTodo(context, todoTitle) {
@@ -62,24 +66,24 @@ export default new Vuex.Store({
         isCompleted: false,
       }
       // console.log(todoItem)
-      context.commit('CREATE_TODO',todoItem)
-      context.dispatch('saveTodosToLocalStorage')
+      context.commit('CREATE_TODO', todoItem)
+      // context.dispatch('saveTodosToLocalStorage')
     },
-    deleteTodo(context, todoitem){
-      context.commit('DELETE_TODO', todoitem)
-      context.dispatch('saveTodosToLocalStorage')
+    deleteTodo(context, todoItem) {
+      context.commit('DELETE_TODO', todoItem)
+      // context.dispatch('saveTodosToLocalStorage')
     },
-    updateTodoStatus(context,todoItem) {
-      context.commit('UPDATE_TODO_STATUS',todoItem)
-      context.dispatch('saveTodosToLocalStorage')
+    updateTodoStatus(context, todoItem) {
+      context.commit('UPDATE_TODO_STATUS', todoItem)
+      // context.dispatch('saveTodosToLocalStorage')
     },
-    saveTodosToLocalStorage(context) {
-      const jsonTodos = JSON.stringify(context.state)
-      localStorage.setItem('todos',jsonTodos)
-    },
-    loadTodos(context) {
-      context.commit('LOAD_TODOS')
-    }
+    // saveTodosToLocalStorage(context) {
+    //   const jsonTodos = JSON.stringify(context.state.todos)
+    //   localStorage.setItem('todos', jsonTodos)
+    // },
+    // loadTodos(context) {
+    //   context.commit('LOAD_TODOS')
+    // }
   },
   modules: {
   }

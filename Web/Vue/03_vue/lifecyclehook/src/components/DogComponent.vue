@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="getDogImage">멍멍아 이리온</button><br><br>
-    <img v-if="imgSrc" :src="imgSrc" alt="#"><br>
+    <img v-if="imgSrc" :src="imgSrc" alt="#" style="height: 300px"><br>
   </div>
 </template>
 
@@ -36,6 +36,8 @@ export default {
   created() {
     this.getDogImage()
     console.log('Child created!')
+    // const button = document.querySelector('button')
+    // button.innerText = '멍멍!'
   },
   mounted() {
     const button = document.querySelector('button')

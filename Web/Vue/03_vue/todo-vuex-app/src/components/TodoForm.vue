@@ -1,23 +1,22 @@
 <template>
   <div>
-    <input
+    <input 
       type="text"
-      v-model="todoTitle"
+      v-model.trim="todoTitle"
       @keyup.enter="createTodo"
     >
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'TodoForm',
+  name:'TodoForm',
   data() {
     return {
       todoTitle: null,
     }
   },
-  methods : {
+  methods: {
     createTodo() {
       // console.log(this.todoTitle)
       if (this.todoTitle) {
@@ -27,7 +26,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style>

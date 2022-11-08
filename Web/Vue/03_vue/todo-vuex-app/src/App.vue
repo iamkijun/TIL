@@ -2,17 +2,17 @@
   <div id="app">
     <h1>Todo List</h1>
     <h2>모든 Todo 개수: {{ allTodosCount }}</h2>
-    <h2>완료한 Todo 개수: {{ completedTodosCount }}</h2>
-    <h2>미완료한 Todo 개수: {{ uncompletedTodosCount }}</h2>
-    <todo-list/>
-    <todo-form/>
-    <button @click="loadTodos">Todo 불러오기</button>
+    <h2>완료된 Todo 개수: {{ completedTodosCount }}</h2>
+    <h2>미완료된 Todo 개수: {{ unCompletedTodosCount }}</h2>
+    <TodoList/>
+    <TodoForm/>
+    <!-- <button @click="loadTodos">Todo 불러오기</button> -->
   </div>
 </template>
 
 <script>
-import TodoForm from './components/TodoForm.vue'
-import TodoList from './components/TodoList.vue'
+import TodoList from '@/components/TodoList'
+import TodoForm from '@/components/TodoForm'
 
 export default {
   name: 'App',
@@ -21,15 +21,15 @@ export default {
     TodoForm,
   },
   computed: {
-    allTodosCount(){
+    allTodosCount() {
       return this.$store.getters.allTodosCount
     },
     completedTodosCount() {
       return this.$store.getters.completedTodosCount
     },
-    uncompletedTodosCount() {
-      return this.$store.getters.uncompletedTodosCount
-    }
+    unCompletedTodosCount() {
+      return this.$store.getters.unCompletedTodosCount
+    }    
   },
   methods: {
     loadTodos() {
